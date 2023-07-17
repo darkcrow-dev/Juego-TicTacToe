@@ -1,0 +1,180 @@
+package com.example.tictactoe
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
+
+class MainActivity : AppCompatActivity() {
+    private var modalidad: String? = null
+
+    private lateinit var imagenesTablero: Array<Array<ImageView>>
+    private lateinit var turnoPantalla: Array<TextView>
+    private var imagenesFichas = arrayOf(R.drawable.ficha_x, R.drawable.ficha_o)
+
+    private lateinit var fichaTurno: ImageView
+    private lateinit var turnoJugador: TextView
+    private lateinit var turnoTexto: TextView
+
+    private lateinit var imagenCasilla1: ImageView
+    private lateinit var imagenCasilla2: ImageView
+    private lateinit var imagenCasilla3: ImageView
+    private lateinit var imagenCasilla4: ImageView
+    private lateinit var imagenCasilla5: ImageView
+    private lateinit var imagenCasilla6: ImageView
+    private lateinit var imagenCasilla7: ImageView
+    private lateinit var imagenCasilla8: ImageView
+    private lateinit var imagenCasilla9: ImageView
+
+    private lateinit var jugadores: Array<Jugadores>
+    private lateinit var jugadoresJuegoTexto: Array<String>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        modalidad = intent.getStringExtra("modalidad")
+
+        fichaTurno = findViewById(R.id.fichaTurno)
+        turnoTexto = findViewById(R.id.turnoTexto)
+        turnoJugador = findViewById(R.id.turnoJugador)
+
+        imagenCasilla1 = findViewById(R.id.imagenCasilla1)
+        imagenCasilla2 = findViewById(R.id.imagenCasilla2)
+        imagenCasilla3 = findViewById(R.id.imagenCasilla3)
+        imagenCasilla4 = findViewById(R.id.imagenCasilla4)
+        imagenCasilla5 = findViewById(R.id.imagenCasilla5)
+        imagenCasilla6 = findViewById(R.id.imagenCasilla6)
+        imagenCasilla7 = findViewById(R.id.imagenCasilla7)
+        imagenCasilla8 = findViewById(R.id.imagenCasilla8)
+        imagenCasilla9 = findViewById(R.id.imagenCasilla9)
+
+        imagenesTablero = arrayOf(arrayOf(imagenCasilla1, imagenCasilla2, imagenCasilla3),
+            arrayOf(imagenCasilla4, imagenCasilla5, imagenCasilla6),
+            arrayOf(imagenCasilla7, imagenCasilla8, imagenCasilla9))
+
+        turnoPantalla = arrayOf(turnoTexto, turnoJugador)
+
+        if(modalidad == "2 JUGADORES"){
+            val jugadoresTexto = intent.getStringArrayExtra("jugadores")
+
+            Jugadores.setJugadoresJuego(jugadoresTexto!!)
+            jugadoresJuegoTexto = Jugadores.getJugadoresJuego()
+
+            val jugador1 = Jugador1(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, this)
+            val jugador2 = Jugador2(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, this)
+
+            if(jugadoresJuegoTexto[0] == "JUGADOR 1"){
+                jugadores = arrayOf(jugador1, jugador2)
+
+            }
+            else{
+                jugadores = arrayOf(jugador2, jugador1)
+            }
+        }
+        else{
+            val jugadoresTexto = intent.getStringArrayExtra("jugadores")
+            val nivel = intent.getStringExtra("nivel")
+
+            Jugadores.setJugadoresJuego(jugadoresTexto!!)
+            jugadoresJuegoTexto = Jugadores.getJugadoresJuego()
+
+            val jugador1 = Jugador1(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, this)
+            val maquina = Maquina(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, nivel!!, this)
+
+            if(jugadoresJuegoTexto[0] == "MAQUINA"){
+                jugadores = arrayOf(maquina, jugador1)
+            }
+            else{
+                jugadores = arrayOf(jugador1, maquina)
+            }
+        }
+
+        Jugadores.setJugadores(jugadores)
+        var bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+        jugadores[bandera].inicializarTablero(0)
+
+        imagenCasilla1.setOnClickListener {
+            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+                bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+                jugadores[bandera].movimientoJugador("0")
+            }
+        }
+
+        imagenCasilla2.setOnClickListener {
+            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+                bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+                jugadores[bandera].movimientoJugador("1")
+            }
+        }
+
+        imagenCasilla3.setOnClickListener {
+            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+                bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+                jugadores[bandera].movimientoJugador("2")
+            }
+        }
+
+        imagenCasilla4.setOnClickListener {
+            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+                bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+                jugadores[bandera].movimientoJugador("3")
+            }
+        }
+
+        imagenCasilla5.setOnClickListener {
+            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+                bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+                jugadores[bandera].movimientoJugador("4")
+            }
+        }
+
+        imagenCasilla6.setOnClickListener {
+            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+                bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+                jugadores[bandera].movimientoJugador("5")
+            }
+        }
+
+        imagenCasilla7.setOnClickListener {
+            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+                bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+                jugadores[bandera].movimientoJugador("6")
+            }
+        }
+
+        imagenCasilla8.setOnClickListener {
+            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+                bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+                jugadores[bandera].movimientoJugador("7")
+            }
+        }
+
+        imagenCasilla9.setOnClickListener {
+            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+                bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
+                jugadores[bandera].movimientoJugador("8")
+            }
+        }
+
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                if(modalidad == "1 JUGADOR"){
+                    val actividad = Intent(this@MainActivity, Dificultad::class.java)
+                    actividad.putExtra("modalidad", modalidad)
+                    startActivity(actividad)
+                    finish()
+                }
+                else{
+                    val actividad = Intent(this@MainActivity, Fichas::class.java)
+                    actividad.putExtra("modalidad", modalidad)
+                    startActivity(actividad)
+                    finish()
+                }
+            }
+
+        })
+    }
+}
