@@ -22,9 +22,7 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
 </body>
 
 Icono de la pantalla de inicio realizado por <b>Freepik</b> de www.flaticon.com
-
 Icono de la imagen del menu realizado por <b>Freepik</b> de www.flaticon.com
-
 Icono de la imagen del menu de seleccion de nivel de la maquina realizado por <b>Icon Jam</b> de www.flaticon.com
 
 Inicio de la aplicación
