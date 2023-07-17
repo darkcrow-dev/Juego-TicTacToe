@@ -27,6 +27,7 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
   <br>Icono de la imagen del menu de seleccion de nivel de la maquina realizado por <b>Icon Jam</b> de www.flaticon.com</br>
 </body>
 
+
 Inicio de la aplicación
 
 ![app0](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/357a3b3c-59df-4730-a5ff-1b00cdd02e3d)
