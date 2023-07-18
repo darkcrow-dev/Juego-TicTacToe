@@ -50,25 +50,46 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
 
 ![app3](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/bfce8585-0fb9-4e0b-ac6d-9e6516d5eef0)
 
-Menú para seleccionar las fichas del jugador 1 en caso de elegir el modo 2 JUGADORES
+<p>
+  <br>Menú para seleccionar las fichas del jugador 1 en caso de elegir el modo 2 JUGADORES
+  <br>Icono de la imagen de versus del menu de seleccion de fichas realizado por <b>Good Ware</b> de www.flaticon.com
+  <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
+  <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+</p>
 
 ![app4](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/1c0738b0-89c5-4632-a78a-adbe3b917f35)
 
-Inicio del juego con su respectivo tablero
+<p>
+  <br>Inicio del juego con su respectivo tablero
+  <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
+  <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+</p>
 
 ![app8](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/4406482d-a39e-47fb-91fa-9f81f89d88d7)
 
-Aplicación del juego
+<p>
+  <br>Aplicación del juego
+  <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
+  <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+</p>
 
 ![app5](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/c563d538-1538-4b00-b19c-d29dfde4833b)
 
 Cuando gana cualquier jugador, aparece un aviso en la cual se indica que jugador ganó y posteriormente te pregunta se desea volver a jugar, si se presiona en SI,
 se vuelve a iniciar el juego, si se presiona que NO, entonces se termina el juego.
 
-Usuario presionando SI
+<p>
+  <br>Usuario presionando SI
+  <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
+  <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+</p>
 
 ![app8](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/c58f1231-8633-461c-a954-bb4e0f8c44d7)
 
-Usuario presionando NO
+<p>
+  <br>Usuario presionando NO
+  <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
+  <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+</p>
 
 ![app7](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/eb16efdd-e0f2-4660-8357-f59afeff9b73)
