@@ -35,9 +35,9 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
 
 ![app1](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/43cad727-c371-4409-a3e7-a027f226d68e)
 
-Menú para la selección del modo de juego
 <p>
-  <br>Icono de la imagen de versus del del menu de seleccion del modo de juego realizado por <b>Good Ware</b> de www.flaticon.com
+  <br>Menú para la selección del modo de juego
+  <br>Icono de la imagen de versus del menu de seleccion del modo de juego realizado por <b>Good Ware</b> de www.flaticon.com
   <br>Iconos de las imagenes del menu de seleccion del modo de juego de 1 JUGADOR y 2 JUGADORES realizado por <b>Freepik</b> de www.freepik.com
 </p>
 
@@ -47,7 +47,6 @@ Menú para la selección del modo de juego
   <br>Menú para seleccionar el nivel de la máquina en caso de elegir el modo 1 JUGADOR
   <br>Icono de la imagen del menu de seleccion de nivel de la maquina realizado por <b>Icon Jam</b> de www.flaticon.com
 </p>
-
 
 ![app3](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/bfce8585-0fb9-4e0b-ac6d-9e6516d5eef0)
 
