@@ -1,6 +1,6 @@
 package com.example.tictactoe
 
-class Defensa: AccionesMaquina {
+class Defensa: JugadorMaquina {
     fun revisarFilas(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Int){
         for(i in 0..2){
             if( ( (matrizTablero[i][0] == fichas[turno]) && (matrizTablero[i][1] == fichas[turno]) && (matrizTablero[i][2] == " ") ) ||

@@ -5,7 +5,7 @@ import kotlin.math.min
 import kotlin.random.Random
 import kotlin.random.nextInt
 
-class Ataque: AccionesMaquina {
+class Ataque: JugadorMaquina {
     fun aleatorio(matrizTablero: Array<Array<String>>) {
         val casilla = Random.nextInt(0..8)
         val filas = (casilla / 3)
