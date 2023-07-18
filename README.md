@@ -29,7 +29,7 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
 ![app0](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/357a3b3c-59df-4730-a5ff-1b00cdd02e3d)
 
 <p>
-  <br>Menú de la aplicacion
+  <br>Menú de la aplicación
   <br>Icono de la imagen del menu realizado por <b>Freepik</b> de www.flaticon.com
 </p>
 
