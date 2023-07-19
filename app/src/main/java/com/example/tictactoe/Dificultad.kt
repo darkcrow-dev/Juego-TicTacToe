@@ -47,22 +47,22 @@ class Dificultad : AppCompatActivity() {
     }
 
     private fun jugar(string: String){
-        val jugadores = seleccionarTurno()
+        val fichas = seleccionarTurno()
 
         val actividad = Intent(this, MainActivity::class.java)
         actividad.putExtra("modalidad", modalidad)
         actividad.putExtra("nivel", string)
-        actividad.putExtra("jugadores", jugadores)
+        actividad.putExtra("fichas", fichas)
         startActivity(actividad)
         finish()
     }
 
     private fun seleccionarTurno(): Array<String>{
-        var fichas = arrayOf("MAQUINA", "JUGADOR 1")
+        var fichas = arrayOf("X", "O")
 
         val aleatorio = Random.nextInt(0..11)
         if(aleatorio >= 6){
-            fichas = arrayOf("JUGADOR 1", "MAQUINA")
+            fichas = arrayOf("O", "X")
         }
 
         return fichas

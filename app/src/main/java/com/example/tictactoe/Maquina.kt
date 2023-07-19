@@ -97,15 +97,23 @@ class Maquina(private var imagenesTablero: Array<Array<ImageView>>, private var 
     override fun inicializarTablero(contador: Int){
         if(contador > 8){
             Jugadores.setNumeroMovimientos(0)
-            Jugadores.setTurno(false)
-            turnoJuego(Jugadores.getTurno())
             JugadorMaquina.setTurnoMaquina(false)
             Jugadores.setJugar(true)
+            val fichas = Jugadores.getFichas()
 
-            if(jugadoresJuegoTexto[Jugadores.convertirBooleano(false)] == "MAQUINA"){
-                val jugadoresJuego = Jugadores.getJugadores()
-                JugadorMaquina.setTurnoMaquina(true)
-                return jugadoresJuego[Jugadores.convertirBooleano(false)].movimientoJugador("")
+            if(fichas[0] == "X"){
+                Jugadores.setTurno(false)
+                turnoJuego(Jugadores.getTurno())
+
+                if(jugadoresJuegoTexto[Jugadores.convertirBooleano(false)] == "MAQUINA"){
+                    val jugadoresJuego = Jugadores.getJugadores()
+                    JugadorMaquina.setTurnoMaquina(true)
+                    return jugadoresJuego[Jugadores.convertirBooleano(false)].movimientoJugador("")
+                }
+            }
+            else{
+                Jugadores.setTurno(true)
+                turnoJuego(Jugadores.getTurno())
             }
 
             return

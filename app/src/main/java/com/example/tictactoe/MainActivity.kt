@@ -9,10 +9,11 @@ import androidx.activity.OnBackPressedCallback
 
 class MainActivity : AppCompatActivity() {
     private var modalidad: String? = null
+    private var fichasTexto: Array<String>? = null
 
     private lateinit var imagenesTablero: Array<Array<ImageView>>
     private lateinit var turnoPantalla: Array<TextView>
-    private var imagenesFichas = arrayOf(R.drawable.ficha_x, R.drawable.ficha_o)
+    private lateinit var imagenesFichas: Array<Int>
 
     private lateinit var fichaTurno: ImageView
     private lateinit var turnoJugador: TextView
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         modalidad = intent.getStringExtra("modalidad")
+        fichasTexto = intent.getStringArrayExtra("fichas")
 
         fichaTurno = findViewById(R.id.fichaTurno)
         turnoTexto = findViewById(R.id.turnoTexto)
@@ -56,40 +58,37 @@ class MainActivity : AppCompatActivity() {
             arrayOf(imagenCasilla7, imagenCasilla8, imagenCasilla9))
 
         turnoPantalla = arrayOf(turnoTexto, turnoJugador)
+        Jugadores.setFichas(fichasTexto!!)
 
-        if(modalidad == "2 JUGADORES"){
-            val jugadoresTexto = intent.getStringArrayExtra("jugadores")
+        if(fichasTexto!![0] == "X"){
+            imagenesFichas = arrayOf(R.drawable.ficha_x, R.drawable.ficha_o)
+            Jugadores.setTurno(false)
+        }
+        else{
+            imagenesFichas = arrayOf(R.drawable.ficha_o, R.drawable.ficha_x)
+            Jugadores.setTurno(true)
+        }
 
-            Jugadores.setJugadoresJuego(jugadoresTexto!!)
-            jugadoresJuegoTexto = Jugadores.getJugadoresJuego()
+        if(modalidad == "2 JUGADORES") {
+            jugadoresJuegoTexto = arrayOf("JUGADOR 1", "JUGADOR 2")
+
+            Jugadores.setJugadoresJuego(jugadoresJuegoTexto)
 
             val jugador1 = Jugador1(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, this)
             val jugador2 = Jugador2(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, this)
 
-            if(jugadoresJuegoTexto[0] == "JUGADOR 1"){
-                jugadores = arrayOf(jugador1, jugador2)
-
-            }
-            else{
-                jugadores = arrayOf(jugador2, jugador1)
-            }
+            jugadores = arrayOf(jugador1, jugador2)
         }
         else{
-            val jugadoresTexto = intent.getStringArrayExtra("jugadores")
             val nivel = intent.getStringExtra("nivel")
+            jugadoresJuegoTexto = arrayOf("MAQUINA", "JUGADOR 1")
 
-            Jugadores.setJugadoresJuego(jugadoresTexto!!)
-            jugadoresJuegoTexto = Jugadores.getJugadoresJuego()
+            Jugadores.setJugadoresJuego(jugadoresJuegoTexto)
 
             val jugador1 = Jugador1(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, this)
             val maquina = Maquina(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, nivel!!, this)
 
-            if(jugadoresJuegoTexto[0] == "MAQUINA"){
-                jugadores = arrayOf(maquina, jugador1)
-            }
-            else{
-                jugadores = arrayOf(jugador1, maquina)
-            }
+            jugadores = arrayOf(maquina, jugador1)
         }
 
         Jugadores.setJugadores(jugadores)

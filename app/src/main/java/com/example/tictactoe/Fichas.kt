@@ -22,15 +22,15 @@ class Fichas : AppCompatActivity() {
         modalidad = intent.getStringExtra("modalidad")
 
         botonFichaX.setOnClickListener {
-            val jugadores = arrayOf("JUGADOR 1", "JUGADOR 2")
-            jugar(jugadores)
+            val fichas = arrayOf("X", "O")
+            jugar(fichas)
 
 
         }
 
         botonFichaO.setOnClickListener {
-            val jugadores = arrayOf("JUGADOR 2", "JUGADOR 1")
-            jugar(jugadores)
+            val fichas = arrayOf("O", "X")
+            jugar(fichas)
         }
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
@@ -44,10 +44,10 @@ class Fichas : AppCompatActivity() {
         })
     }
 
-    private fun jugar(arrayJugadores: Array<String>){
+    private fun jugar(arrayFichas: Array<String>){
         val actividad = Intent(this, MainActivity::class.java)
         actividad.putExtra("modalidad", modalidad)
-        actividad.putExtra("jugadores", arrayJugadores)
+        actividad.putExtra("fichas", arrayFichas)
         startActivity(actividad)
         finish()
     }

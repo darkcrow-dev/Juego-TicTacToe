@@ -6,7 +6,7 @@ interface Jugadores{
         private var turnoJuego = false
         private var numeroMovimientos = 0
         private var matrizTablero = Array(3) {Array(3) {" "}}
-        private var fichas = arrayOf("X", "O")
+        private var fichas = arrayOf("", "")
         private var jugar = true
         private var jugadoresJuego = arrayOf("", "")
         private lateinit var jugadores: Array<Jugadores>
@@ -38,6 +38,10 @@ interface Jugadores{
 
         fun getFichas(): Array<String>{
             return fichas
+        }
+
+        fun setFichas(stringArray: Array<String>){
+            fichas = stringArray
         }
 
         fun getJugar(): Boolean{

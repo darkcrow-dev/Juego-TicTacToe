@@ -117,11 +117,11 @@ class Ataque: JugadorMaquina {
 
         when (resultado) {
             jugadores[bandera] -> {
-                mejorPuntaje = ( -10*(bandera) ) + ( 10*(banderaInvertida) )
+                mejorPuntaje = 10*(banderaInvertida - bandera)
                 return mejorPuntaje
             }
             jugadores[banderaInvertida] -> {
-                mejorPuntaje = ( -10*(banderaInvertida) ) + ( 10*(bandera) )
+                mejorPuntaje = 10*(bandera - banderaInvertida)
                 return mejorPuntaje
             }
             "EMPATE" -> {
