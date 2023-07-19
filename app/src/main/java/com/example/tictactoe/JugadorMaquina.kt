@@ -3,8 +3,7 @@ package com.example.tictactoe
 interface JugadorMaquina: Jugadores {
 
     companion object{
-        var ataque = Ataque()
-        var defensa = Defensa()
+        var acciones = AccionesMaquina()
 
         private var turnoMaquina = false
         private var filas = ""

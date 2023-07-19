@@ -5,7 +5,9 @@ import kotlin.math.min
 import kotlin.random.Random
 import kotlin.random.nextInt
 
-class Ataque: JugadorMaquina {
+class AccionesMaquina: JugadorMaquina {
+    private var cambio = false
+
     fun aleatorio(matrizTablero: Array<Array<String>>) {
         val casilla = Random.nextInt(0..8)
         val filas = (casilla / 3)
@@ -20,11 +22,12 @@ class Ataque: JugadorMaquina {
         aleatorio(matrizTablero)
     }
 
-    fun revisarFilas(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Int) {
+    fun revisarFilas(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Boolean) {
+        val bandera = Jugadores.convertirBooleano(turno)
         for(i in 0..2){
-            if( ( (matrizTablero[i][0] == fichas[turno]) && (matrizTablero[i][1] == fichas[turno]) && (matrizTablero[i][2] == " ") ) ||
-                ( (matrizTablero[i][0] == fichas[turno]) && (matrizTablero[i][2] == fichas[turno]) && (matrizTablero[i][1] == " ") ) ||
-                ( (matrizTablero[i][1] == fichas[turno]) && (matrizTablero[i][2] == fichas[turno]) && (matrizTablero[i][0] == " ") ) ){
+            if( ( (matrizTablero[i][0] == fichas[bandera]) && (matrizTablero[i][1] == fichas[bandera]) && (matrizTablero[i][2] == " ") ) ||
+                ( (matrizTablero[i][0] == fichas[bandera]) && (matrizTablero[i][2] == fichas[bandera]) && (matrizTablero[i][1] == " ") ) ||
+                ( (matrizTablero[i][1] == fichas[bandera]) && (matrizTablero[i][2] == fichas[bandera]) && (matrizTablero[i][0] == " ") ) ){
                 for(j in 0..2){
                     if(matrizTablero[i][j] == " "){
                         JugadorMaquina.setFilas(i.toString())
@@ -38,11 +41,12 @@ class Ataque: JugadorMaquina {
         return revisarColumnas(fichas, matrizTablero, turno)
     }
 
-    private fun revisarColumnas(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Int){
+    private fun revisarColumnas(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Boolean){
+        val bandera = Jugadores.convertirBooleano(turno)
         for(i in 0..2){
-            if( ( (matrizTablero[0][i] == fichas[turno]) && (matrizTablero[1][i] == fichas[turno]) && (matrizTablero[2][i] == " ") ) ||
-                ( (matrizTablero[0][i] == fichas[turno]) && (matrizTablero[2][i] == fichas[turno]) && (matrizTablero[1][i] == " ") ) ||
-                ( (matrizTablero[1][i] == fichas[turno]) && (matrizTablero[2][i] == fichas[turno]) && (matrizTablero[0][i] == " ") ) ){
+            if( ( (matrizTablero[0][i] == fichas[bandera]) && (matrizTablero[1][i] == fichas[bandera]) && (matrizTablero[2][i] == " ") ) ||
+                ( (matrizTablero[0][i] == fichas[bandera]) && (matrizTablero[2][i] == fichas[bandera]) && (matrizTablero[1][i] == " ") ) ||
+                ( (matrizTablero[1][i] == fichas[bandera]) && (matrizTablero[2][i] == fichas[bandera]) && (matrizTablero[0][i] == " ") ) ){
                 for(j in 0..2){
                     if(matrizTablero[j][i] == " "){
                         JugadorMaquina.setFilas(j.toString())
@@ -56,10 +60,11 @@ class Ataque: JugadorMaquina {
         return revisarDiagonales(fichas, matrizTablero, turno)
     }
 
-    private fun revisarDiagonales(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Int){
-        if( ( (matrizTablero[0][0] == fichas[turno]) && (matrizTablero[1][1] == fichas[turno]) && (matrizTablero[2][2] == " ") ) ||
-            ( (matrizTablero[0][0] == fichas[turno]) && (matrizTablero[2][2] == fichas[turno]) && (matrizTablero[1][1] == " ") ) ||
-            ( (matrizTablero[1][1] == fichas[turno]) && (matrizTablero[2][2] == fichas[turno]) && (matrizTablero[0][0] == " ") ) ){
+    private fun revisarDiagonales(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Boolean){
+        val bandera = Jugadores.convertirBooleano(turno)
+        if( ( (matrizTablero[0][0] == fichas[bandera]) && (matrizTablero[1][1] == fichas[bandera]) && (matrizTablero[2][2] == " ") ) ||
+            ( (matrizTablero[0][0] == fichas[bandera]) && (matrizTablero[2][2] == fichas[bandera]) && (matrizTablero[1][1] == " ") ) ||
+            ( (matrizTablero[1][1] == fichas[bandera]) && (matrizTablero[2][2] == fichas[bandera]) && (matrizTablero[0][0] == " ") ) ){
             for(i in 0..2){
                 if(matrizTablero[i][i] == " "){
                     JugadorMaquina.setFilas(i.toString())
@@ -68,9 +73,9 @@ class Ataque: JugadorMaquina {
                 }
             }
         }
-        else if( ( (matrizTablero[0][2] == fichas[turno]) && (matrizTablero[1][1] == fichas[turno]) && (matrizTablero[2][0] == " ") ) ||
-            ( (matrizTablero[0][2] == fichas[turno]) && (matrizTablero[2][0] == fichas[turno]) && (matrizTablero[1][1] == " ") ) ||
-            ( (matrizTablero[1][1] == fichas[turno]) && (matrizTablero[2][0] == fichas[turno]) && (matrizTablero[0][2] == " ") ) ){
+        else if( ( (matrizTablero[0][2] == fichas[bandera]) && (matrizTablero[1][1] == fichas[bandera]) && (matrizTablero[2][0] == " ") ) ||
+            ( (matrizTablero[0][2] == fichas[bandera]) && (matrizTablero[2][0] == fichas[bandera]) && (matrizTablero[1][1] == " ") ) ||
+            ( (matrizTablero[1][1] == fichas[bandera]) && (matrizTablero[2][0] == fichas[bandera]) && (matrizTablero[0][2] == " ") ) ){
             for(i in 0..2){
                 if(matrizTablero[i][2 - i] == " "){
                     JugadorMaquina.setFilas(i.toString())
@@ -80,8 +85,17 @@ class Ataque: JugadorMaquina {
             }
         }
 
+        if( (cambio) && ( (JugadorMaquina.getFilas() == "") && (JugadorMaquina.getColumnas() == "") ) ){
+            cambio = false
+            return aleatorio(matrizTablero)
+        }
+
+        cambio = true
+        val cambiarTurno = !turno
         JugadorMaquina.setFilas("")
         JugadorMaquina.setColumnas("")
+
+        return revisarFilas(fichas, matrizTablero, cambiarTurno)
     }
 
     fun mejorJugada(fichas: Array<String>, matrizTablero: Array<Array<String>>, numeroMovimientos: Int, turno: Boolean, jugadores: Array<String>){

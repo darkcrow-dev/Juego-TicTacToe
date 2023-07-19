@@ -16,48 +16,24 @@ class Maquina(private var imagenesTablero: Array<Array<ImageView>>, private var 
         var turno = Jugadores.getTurno()
         val bandera = Jugadores.convertirBooleano(turno)
         var numeroMovimientos = Jugadores.getNumeroMovimientos()
-        var filas: String
-        var columnas: String
 
         when(nivel){
             "FACIL" -> {
-                val ataque = JugadorMaquina.ataque
+                val ataque = JugadorMaquina.acciones
                 ataque.aleatorio(matrizTablero)
-
-                filas = (JugadorMaquina.getFilas())
-                columnas = (JugadorMaquina.getColumnas())
             }
             "INTERMEDIO" -> {
-                val ataque = JugadorMaquina.ataque
-
-                ataque.revisarFilas(fichas, matrizTablero, bandera)
-                filas = JugadorMaquina.getFilas()
-                columnas = JugadorMaquina.getColumnas()
-
-                if( (filas == "") && (columnas == "") ){
-                    val defensa = JugadorMaquina.defensa
-                    val banderaInvertida = Jugadores.convertirBooleano(!turno)
-
-                    defensa.revisarFilas(fichas, matrizTablero, banderaInvertida)
-                    filas = JugadorMaquina.getFilas()
-                    columnas = JugadorMaquina.getColumnas()
-
-                    if( (filas == "") && (columnas == "") ){
-                        ataque.aleatorio(matrizTablero)
-                        filas = JugadorMaquina.getFilas()
-                        columnas = JugadorMaquina.getColumnas()
-                    }
-                }
+                val ataque = JugadorMaquina.acciones
+                ataque.revisarFilas(fichas, matrizTablero, turno)
             }
             else -> {
-                val ataque = JugadorMaquina.ataque
-
+                val ataque = JugadorMaquina.acciones
                 ataque.mejorJugada(fichas, matrizTablero, numeroMovimientos, turno, jugadoresJuegoTexto)
-
-                filas = JugadorMaquina.getFilas()
-                columnas = JugadorMaquina.getColumnas()
             }
         }
+
+        val filas = JugadorMaquina.getFilas()
+        val columnas = JugadorMaquina.getColumnas()
 
         imagenesTablero[filas.toInt()][columnas.toInt()].setImageResource(imagenesFichas[bandera])
         matrizTablero[filas.toInt()][columnas.toInt()] = fichas[bandera]
