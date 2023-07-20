@@ -8,7 +8,19 @@ import kotlin.random.nextInt
 class AccionesMaquina: JugadorMaquina {
     private var cambio = false
 
-    fun aleatorio(matrizTablero: Array<Array<String>>) {
+    fun ataqueDebil(matrizTablero: Array<Array<String>>){
+        return aleatorio(matrizTablero)
+    }
+
+    fun ataqueIntermedio(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Boolean){
+        return revisarFilas(fichas, matrizTablero, turno)
+    }
+
+    fun ataqueFuerte(fichas: Array<String>, matrizTablero: Array<Array<String>>, numeroMovimientos: Int, turno: Boolean, jugadores: Array<String>){
+        return mejorJugada(fichas, matrizTablero, numeroMovimientos, turno, jugadores)
+    }
+
+    private fun aleatorio(matrizTablero: Array<Array<String>>) {
         val casilla = Random.nextInt(0..8)
         val filas = (casilla / 3)
         val columnas = casilla - (3 * filas)
@@ -22,7 +34,7 @@ class AccionesMaquina: JugadorMaquina {
         aleatorio(matrizTablero)
     }
 
-    fun revisarFilas(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Boolean) {
+    private fun revisarFilas(fichas: Array<String>, matrizTablero: Array<Array<String>>, turno: Boolean) {
         val bandera = Jugadores.convertirBooleano(turno)
         for(i in 0..2){
             if( ( (matrizTablero[i][0] == fichas[bandera]) && (matrizTablero[i][1] == fichas[bandera]) && (matrizTablero[i][2] == " ") ) ||
@@ -98,7 +110,7 @@ class AccionesMaquina: JugadorMaquina {
         return revisarFilas(fichas, matrizTablero, cambiarTurno)
     }
 
-    fun mejorJugada(fichas: Array<String>, matrizTablero: Array<Array<String>>, numeroMovimientos: Int, turno: Boolean, jugadores: Array<String>){
+    private fun mejorJugada(fichas: Array<String>, matrizTablero: Array<Array<String>>, numeroMovimientos: Int, turno: Boolean, jugadores: Array<String>){
         var mejorPuntaje = -10000
         for(i in 0..2){
             for(j in 0..2){

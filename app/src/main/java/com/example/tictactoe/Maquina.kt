@@ -19,16 +19,16 @@ class Maquina(private var imagenesTablero: Array<Array<ImageView>>, private var 
 
         when(nivel){
             "FACIL" -> {
-                val ataque = JugadorMaquina.acciones
-                ataque.aleatorio(matrizTablero)
+                val accionesMaquina = JugadorMaquina.acciones
+                accionesMaquina.ataqueDebil(matrizTablero)
             }
             "INTERMEDIO" -> {
-                val ataque = JugadorMaquina.acciones
-                ataque.revisarFilas(fichas, matrizTablero, turno)
+                val accionesMaquina = JugadorMaquina.acciones
+                accionesMaquina.ataqueIntermedio(fichas, matrizTablero, turno)
             }
             else -> {
-                val ataque = JugadorMaquina.acciones
-                ataque.mejorJugada(fichas, matrizTablero, numeroMovimientos, turno, jugadoresJuegoTexto)
+                val accionesMaquina = JugadorMaquina.acciones
+                accionesMaquina.ataqueFuerte(fichas, matrizTablero, numeroMovimientos, turno, jugadoresJuegoTexto)
             }
         }
 
