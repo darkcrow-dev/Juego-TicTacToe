@@ -31,6 +31,7 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
 <p>
   <br>Menú de la aplicación
   <br>Icono de la imagen del menu realizado por <b>Freepik</b> de www.flaticon.com
+  <br>Imagen de fondo de la aplicación realizado por <b>PNGWing</b> de https://www.pngwing.com/
 </p>
 
 ![app1](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/43cad727-c371-4409-a3e7-a027f226d68e)
@@ -39,6 +40,7 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
   <br>Menú para la selección del modo de juego
   <br>Icono de la imagen de versus del menu de seleccion del modo de juego realizado por <b>Good Ware</b> de www.flaticon.com
   <br>Iconos de las imagenes del menu de seleccion del modo de juego de 1 JUGADOR y 2 JUGADORES realizado por <b>Freepik</b> de www.freepik.com
+  <br>Imagen de fondo de la aplicación realizado por <b>PNGWing</b> de https://www.pngwing.com/
 </p>
 
 ![app2](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/a762a6b0-b906-4c94-ab0e-8a7783210642)
@@ -46,6 +48,7 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
 <p>
   <br>Menú para seleccionar el nivel de la máquina en caso de elegir el modo 1 JUGADOR
   <br>Icono de la imagen del menu de seleccion de nivel de la maquina realizado por <b>Icon Jam</b> de www.flaticon.com
+  <br>Imagen de fondo de la aplicación realizado por <b>PNGWing</b> de https://www.pngwing.com/
 </p>
 
 ![app3](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/bfce8585-0fb9-4e0b-ac6d-9e6516d5eef0)
@@ -55,6 +58,7 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
   <br>Icono de la imagen de versus del menu de seleccion de fichas realizado por <b>Good Ware</b> de www.flaticon.com
   <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
   <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+  <br>Imagen de fondo de la aplicación realizado por <b>PNGWing</b> de https://www.pngwing.com/
 </p>
 
 ![app4](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/1c0738b0-89c5-4632-a78a-adbe3b917f35)
@@ -63,6 +67,7 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
   <br>Inicio del juego con su respectivo tablero
   <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
   <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+  <br>Imagen de fondo de la aplicación realizado por <b>PNGWing</b> de https://www.pngwing.com/
 </p>
 
 ![app8](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/4406482d-a39e-47fb-91fa-9f81f89d88d7)
@@ -71,6 +76,7 @@ Clásico juego de tic tac toe de 3x3 con un menú con difentes modos del juego a
   <br>Aplicación del juego
   <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
   <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+  <br>Imagen de fondo de la aplicación realizado por <b>PNGWing</b> de https://www.pngwing.com/
 </p>
 
 ![app5](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/c563d538-1538-4b00-b19c-d29dfde4833b)
@@ -82,6 +88,7 @@ se vuelve a iniciar el juego, si se presiona que NO, entonces se termina el jueg
   <br>Usuario presionando SI
   <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
   <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+  <br>Imagen de fondo de la aplicación realizado por <b>PNGWing</b> de https://www.pngwing.com/
 </p>
 
 ![app8](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/c58f1231-8633-461c-a954-bb4e0f8c44d7)
@@ -90,6 +97,7 @@ se vuelve a iniciar el juego, si se presiona que NO, entonces se termina el jueg
   <br>Usuario presionando NO
   <br>Icono de la imagen de la ficha X realizado por <b>Vitaly Gorbachev</b> de www.flaticon.com
   <br>Icono de la imagen de la ficha O realizado por <b>rizal2109</b> de www.flaticon.com
+  <br>Imagen de fondo de la aplicación realizado por <b>PNGWing</b> de https://www.pngwing.com/
 </p>
 
 ![app7](https://github.com/darkcrow-dev/Juego-TicTacToe/assets/108247794/eb16efdd-e0f2-4660-8357-f59afeff9b73)
