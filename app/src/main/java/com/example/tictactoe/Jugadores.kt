@@ -12,6 +12,8 @@ interface Jugadores{
         private lateinit var jugadores: Array<Jugadores>
         private var ganador = Ganador()
 
+        private var turnoMaquina = false
+
         fun getTurno(): Boolean {
             return turnoJuego
         }
@@ -66,6 +68,14 @@ interface Jugadores{
 
         fun setJugadores(arrayJugadores: Array<Jugadores>){
             jugadores = arrayJugadores
+        }
+
+        fun getTurnoMaquina(): Boolean{
+            return turnoMaquina
+        }
+
+        fun setTurnoMaquina(booleano: Boolean){
+            turnoMaquina = booleano
         }
 
         fun convertirBooleano(booleano: Boolean): Int{

@@ -39,7 +39,7 @@ class Jugador1(private var imagenesTablero: Array<Array<ImageView>>, private var
 
                 if(jugadoresJuegoTexto[Jugadores.convertirBooleano(turno)] == "MAQUINA"){
                     val jugadoresJuego = Jugadores.getJugadores()
-                    JugadorMaquina.setTurnoMaquina(true)
+                    Jugadores.setTurnoMaquina(true)
                     jugadoresJuego[Jugadores.convertirBooleano(turno)].movimientoJugador("")
                 }
             }
@@ -62,7 +62,7 @@ class Jugador1(private var imagenesTablero: Array<Array<ImageView>>, private var
     override fun inicializarTablero(contador: Int){
         if(contador > 8){
             Jugadores.setNumeroMovimientos(0)
-            JugadorMaquina.setTurnoMaquina(false)
+            Jugadores.setTurnoMaquina(false)
             Jugadores.setJugar(true)
             val fichas = Jugadores.getFichas()
 
@@ -72,7 +72,7 @@ class Jugador1(private var imagenesTablero: Array<Array<ImageView>>, private var
 
                 if(jugadoresJuegoTexto[Jugadores.convertirBooleano(false)] == "MAQUINA"){
                     val jugadoresJuego = Jugadores.getJugadores()
-                    JugadorMaquina.setTurnoMaquina(true)
+                    Jugadores.setTurnoMaquina(true)
                     return jugadoresJuego[Jugadores.convertirBooleano(false)].movimientoJugador("")
                 }
             }

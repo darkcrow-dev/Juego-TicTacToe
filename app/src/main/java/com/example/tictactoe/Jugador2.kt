@@ -56,7 +56,7 @@ class Jugador2(private var imagenesTablero: Array<Array<ImageView>>, private var
     override fun inicializarTablero(contador: Int){
         if(contador > 8){
             Jugadores.setNumeroMovimientos(0)
-            JugadorMaquina.setTurnoMaquina(false)
+            Jugadores.setTurnoMaquina(false)
             Jugadores.setJugar(true)
             val fichas = Jugadores.getFichas()
 

@@ -96,63 +96,63 @@ class MainActivity : AppCompatActivity() {
         jugadores[bandera].inicializarTablero(0)
 
         imagenCasilla1.setOnClickListener {
-            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+            if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
                 bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
                 jugadores[bandera].movimientoJugador("0")
             }
         }
 
         imagenCasilla2.setOnClickListener {
-            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+            if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
                 bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
                 jugadores[bandera].movimientoJugador("1")
             }
         }
 
         imagenCasilla3.setOnClickListener {
-            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+            if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
                 bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
                 jugadores[bandera].movimientoJugador("2")
             }
         }
 
         imagenCasilla4.setOnClickListener {
-            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+            if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
                 bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
                 jugadores[bandera].movimientoJugador("3")
             }
         }
 
         imagenCasilla5.setOnClickListener {
-            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+            if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
                 bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
                 jugadores[bandera].movimientoJugador("4")
             }
         }
 
         imagenCasilla6.setOnClickListener {
-            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+            if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
                 bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
                 jugadores[bandera].movimientoJugador("5")
             }
         }
 
         imagenCasilla7.setOnClickListener {
-            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+            if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
                 bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
                 jugadores[bandera].movimientoJugador("6")
             }
         }
 
         imagenCasilla8.setOnClickListener {
-            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+            if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
                 bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
                 jugadores[bandera].movimientoJugador("7")
             }
         }
 
         imagenCasilla9.setOnClickListener {
-            if(Jugadores.getJugar() && !JugadorMaquina.getTurnoMaquina()){
+            if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
                 bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
                 jugadores[bandera].movimientoJugador("8")
             }
