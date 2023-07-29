@@ -8,7 +8,7 @@ import androidx.activity.OnBackPressedCallback
 import kotlin.random.Random
 import kotlin.random.nextInt
 
-class Dificultad : AppCompatActivity() {
+class DificultadActivity : AppCompatActivity() {
     private lateinit var botonFacil: Button
     private lateinit var botonIntermedio: Button
     private lateinit var botonDificil: Button
@@ -39,7 +39,7 @@ class Dificultad : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                startActivity(Intent(this@Dificultad, Modalidad::class.java))
+                startActivity(Intent(this@DificultadActivity, ModalidadActivity::class.java))
                 finish()
             }
 

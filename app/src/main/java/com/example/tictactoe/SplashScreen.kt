@@ -8,7 +8,7 @@ class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        startActivity(Intent(this, Menu::class.java))
+        startActivity(Intent(this, MenuActivity::class.java))
         finish()
     }
 }

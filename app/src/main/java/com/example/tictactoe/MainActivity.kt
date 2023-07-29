@@ -161,13 +161,13 @@ class MainActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 if(modalidad == "1 JUGADOR"){
-                    val actividad = Intent(this@MainActivity, Dificultad::class.java)
+                    val actividad = Intent(this@MainActivity, DificultadActivity::class.java)
                     actividad.putExtra("modalidad", modalidad)
                     startActivity(actividad)
                     finish()
                 }
                 else{
-                    val actividad = Intent(this@MainActivity, Fichas::class.java)
+                    val actividad = Intent(this@MainActivity, FichasActivity::class.java)
                     actividad.putExtra("modalidad", modalidad)
                     startActivity(actividad)
                     finish()

@@ -10,7 +10,7 @@ import android.view.Window
 import android.widget.Button
 import android.widget.TextView
 
-class Menu : AppCompatActivity() {
+class MenuActivity : AppCompatActivity() {
     private lateinit var botonJugar: Button
     private lateinit var botonInformacion: Button
 
@@ -22,7 +22,7 @@ class Menu : AppCompatActivity() {
         botonInformacion = findViewById(R.id.botonInformacion)
 
         botonJugar.setOnClickListener {
-            startActivity(Intent(this, Modalidad::class.java))
+            startActivity(Intent(this, ModalidadActivity::class.java))
             finish()
         }
 

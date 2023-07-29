@@ -23,16 +23,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Fichas"
+            android:name=".FichasActivity"
             android:exported="false" />
         <activity
-            android:name=".Dificultad"
+            android:name=".DificultadActivity"
             android:exported="false" />
         <activity
-            android:name=".Modalidad"
+            android:name=".ModalidadActivity"
             android:exported="false" />
         <activity
-            android:name=".Menu"
+            android:name=".MenuActivity"
             android:exported="false"/>
         <activity
             android:name=".MainActivity"

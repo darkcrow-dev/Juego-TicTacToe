@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 
-class Modalidad : AppCompatActivity() {
+class ModalidadActivity : AppCompatActivity() {
     private lateinit var botonModo1: Button
     private lateinit var botonModo2: Button
 
@@ -18,14 +18,14 @@ class Modalidad : AppCompatActivity() {
         botonModo2 = findViewById(R.id.botonModo2)
 
         botonModo1.setOnClickListener {
-            val actividad = Intent(this, Dificultad::class.java)
+            val actividad = Intent(this, DificultadActivity::class.java)
             actividad.putExtra("modalidad", "1 JUGADOR")
             startActivity(actividad)
             finish()
         }
 
         botonModo2.setOnClickListener {
-            val actividad = Intent(this, Fichas::class.java)
+            val actividad = Intent(this, FichasActivity::class.java)
             actividad.putExtra("modalidad", "2 JUGADORES")
             startActivity(actividad)
             finish()
@@ -33,7 +33,7 @@ class Modalidad : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                startActivity(Intent(this@Modalidad, Menu::class.java))
+                startActivity(Intent(this@ModalidadActivity, MenuActivity::class.java))
                 finish()
             }
 

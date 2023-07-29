@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.OnBackPressedCallback
 
-class Fichas : AppCompatActivity() {
+class FichasActivity : AppCompatActivity() {
     private lateinit var botonFichaX: Button
     private lateinit var botonFichaO: Button
 
@@ -35,7 +35,7 @@ class Fichas : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                val actividad = Intent(this@Fichas, Modalidad::class.java)
+                val actividad = Intent(this@FichasActivity, ModalidadActivity::class.java)
                 actividad.putExtra("modalidad", modalidad)
                 startActivity(actividad)
                 finish()
