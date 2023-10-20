@@ -160,20 +160,18 @@ class MainActivity : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
+                var actividad = Intent(this@MainActivity, FichasActivity::class.java)
                 if(modalidad == "1 JUGADOR"){
-                    val actividad = Intent(this@MainActivity, DificultadActivity::class.java)
-                    actividad.putExtra("modalidad", modalidad)
-                    startActivity(actividad)
-                    finish()
+                    actividad = Intent(this@MainActivity, DificultadActivity::class.java)
                 }
-                else{
-                    val actividad = Intent(this@MainActivity, FichasActivity::class.java)
-                    actividad.putExtra("modalidad", modalidad)
-                    startActivity(actividad)
-                    finish()
-                }
+                cerrarActividad(actividad)
             }
-
         })
+    }
+
+    private fun cerrarActividad(actividad: Intent){
+        actividad.putExtra("modalidad", modalidad)
+        startActivity(actividad)
+        finish()
     }
 }
