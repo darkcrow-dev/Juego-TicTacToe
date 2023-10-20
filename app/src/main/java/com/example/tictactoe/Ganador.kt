@@ -54,6 +54,7 @@ class Ganador: Jugadores{
         return resultado
     }
 
+    //Funcion para declarar ganador
     fun declararGanador(string: String, contexto: Context){
         val dialogo = Dialog(contexto)
         dialogo.requestWindowFeature(Window.FEATURE_NO_TITLE)
