@@ -56,7 +56,6 @@ class Maquina(private var imagenesTablero: Array<Array<ImageView>>, private var 
             turno = !turno
             Jugadores.setTurno(turno)
             turnoJuego(turno)
-            Jugadores.setTurnoMaquina(false)
         }
     }
 
@@ -64,6 +63,7 @@ class Maquina(private var imagenesTablero: Array<Array<ImageView>>, private var 
         val bandera = Jugadores.convertirBooleano(turno)
         turnoPantalla[1].text = jugadoresJuegoTexto[bandera]
         turnoFicha.setImageResource(imagenesFichas[bandera])
+        Jugadores.setTurnoMaquina(false)
     }
 
     override fun terminarJuego(){
