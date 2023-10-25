@@ -50,13 +50,12 @@ class Maquina(private var imagenesTablero: Array<Array<ImageView>>, private var 
         val resultado = ganador.resultado
 
         if(resultado != " "){
-            ganador.declararGanador(resultado, contexto)
+            return ganador.declararGanador(resultado, contexto)
         }
-        else{
-            turno = !turno
-            Jugadores.setTurno(turno)
-            turnoJuego(turno)
-        }
+
+        turno = !turno
+        Jugadores.setTurno(turno)
+        turnoJuego(turno)
     }
 
     private fun turnoJuego(turno: Boolean){

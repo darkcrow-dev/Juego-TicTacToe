@@ -30,13 +30,12 @@ class Jugador1(private var imagenesTablero: Array<Array<ImageView>>, private var
             val resultado = ganador.resultado
 
             if(resultado != " "){
-                ganador.declararGanador(resultado, contexto)
+                return ganador.declararGanador(resultado, contexto)
             }
-            else{
-                val turno = !Jugadores.getTurno()
-                Jugadores.setTurno(turno)
-                turnoJuego(turno)
-            }
+
+            val turno = !Jugadores.getTurno()
+            Jugadores.setTurno(turno)
+            turnoJuego(turno)
         }
     }
 
