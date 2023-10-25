@@ -54,8 +54,8 @@ class MainActivity : AppCompatActivity() {
         imagenCasilla9 = findViewById(R.id.imagenCasilla9)
 
         imagenesTablero = arrayOf(arrayOf(imagenCasilla1, imagenCasilla2, imagenCasilla3),
-            arrayOf(imagenCasilla4, imagenCasilla5, imagenCasilla6),
-            arrayOf(imagenCasilla7, imagenCasilla8, imagenCasilla9))
+                          arrayOf(imagenCasilla4, imagenCasilla5, imagenCasilla6),
+                          arrayOf(imagenCasilla7, imagenCasilla8, imagenCasilla9))
 
         turnoPantalla = arrayOf(turnoTexto, turnoJugador)
         Jugadores.setFichas(fichasTexto!!)

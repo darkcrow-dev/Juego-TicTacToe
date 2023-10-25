@@ -36,12 +36,6 @@ class Jugador1(private var imagenesTablero: Array<Array<ImageView>>, private var
                 val turno = !Jugadores.getTurno()
                 Jugadores.setTurno(turno)
                 turnoJuego(turno)
-
-                if(jugadoresJuegoTexto[Jugadores.convertirBooleano(turno)] == "MAQUINA"){
-                    val jugadoresJuego = Jugadores.getJugadores()
-                    Jugadores.setTurnoMaquina(true)
-                    jugadoresJuego[Jugadores.convertirBooleano(turno)].movimientoJugador("")
-                }
             }
         }
     }
@@ -50,6 +44,12 @@ class Jugador1(private var imagenesTablero: Array<Array<ImageView>>, private var
         val bandera = Jugadores.convertirBooleano(turno)
         turnoPantalla[1].text = jugadoresJuegoTexto[bandera]
         turnoFicha.setImageResource(imagenesFichas[bandera])
+
+        if(jugadoresJuegoTexto[bandera] == "MAQUINA"){
+            val jugadoresJuego = Jugadores.getJugadores()
+            Jugadores.setTurnoMaquina(true)
+            jugadoresJuego[bandera].movimientoJugador("")
+        }
     }
 
     override fun terminarJuego(){
