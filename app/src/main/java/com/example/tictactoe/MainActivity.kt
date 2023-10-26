@@ -8,9 +8,6 @@ import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 
 class MainActivity : AppCompatActivity() {
-    private var modalidad: String? = null
-    private var fichasTexto: Array<String>? = null
-
     private lateinit var imagenesTablero: Array<Array<ImageView>>
     private lateinit var turnoPantalla: Array<TextView>
     private lateinit var imagenesFichas: Array<Int>
@@ -36,9 +33,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        modalidad = intent.getStringExtra("modalidad")
-        fichasTexto = intent.getStringArrayExtra("fichas")
-
         fichaTurno = findViewById(R.id.fichaTurno)
         turnoTexto = findViewById(R.id.turnoTexto)
         turnoJugador = findViewById(R.id.turnoJugador)
@@ -54,13 +48,14 @@ class MainActivity : AppCompatActivity() {
         imagenCasilla9 = findViewById(R.id.imagenCasilla9)
 
         imagenesTablero = arrayOf(arrayOf(imagenCasilla1, imagenCasilla2, imagenCasilla3),
-                          arrayOf(imagenCasilla4, imagenCasilla5, imagenCasilla6),
-                          arrayOf(imagenCasilla7, imagenCasilla8, imagenCasilla9))
+            arrayOf(imagenCasilla4, imagenCasilla5, imagenCasilla6),
+            arrayOf(imagenCasilla7, imagenCasilla8, imagenCasilla9))
 
         turnoPantalla = arrayOf(turnoTexto, turnoJugador)
-        Jugadores.setFichas(fichasTexto!!)
+        val fichasTexto = Jugadores.getFichas()
+        val modalidad = Jugadores.getModalidad()
 
-        if(fichasTexto!![0] == "X"){
+        if(fichasTexto[0] == "X"){
             imagenesFichas = arrayOf(R.drawable.ficha_x, R.drawable.ficha_o)
             Jugadores.setTurno(false)
         }
@@ -80,13 +75,13 @@ class MainActivity : AppCompatActivity() {
             jugadores = arrayOf(jugador1, jugador2)
         }
         else{
-            val nivel = intent.getStringExtra("nivel")
+            val nivel = Jugadores.getNivel()
             jugadoresJuegoTexto = arrayOf("MAQUINA", "JUGADOR 1")
 
             Jugadores.setJugadoresJuego(jugadoresJuegoTexto)
 
             val jugador1 = Jugador1(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, this)
-            val maquina = Maquina(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, nivel!!, this)
+            val maquina = Maquina(imagenesTablero, imagenesFichas, turnoPantalla, fichaTurno, nivel, this)
 
             jugadores = arrayOf(maquina, jugador1)
         }
@@ -160,18 +155,15 @@ class MainActivity : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                var actividad = Intent(this@MainActivity, FichasActivity::class.java)
                 if(modalidad == "1 JUGADOR"){
-                    actividad = Intent(this@MainActivity, DificultadActivity::class.java)
+                    startActivity(Intent(this@MainActivity, DificultadActivity::class.java))
+                    finish()
                 }
-                cerrarActividad(actividad)
+                else{
+                    startActivity(Intent(this@MainActivity, FichasActivity::class.java))
+                    finish()
+                }
             }
         })
-    }
-
-    private fun cerrarActividad(actividad: Intent){
-        actividad.putExtra("modalidad", modalidad)
-        startActivity(actividad)
-        finish()
     }
 }

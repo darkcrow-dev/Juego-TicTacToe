@@ -11,7 +11,8 @@ interface Jugadores{
         private var jugadoresJuego = arrayOf("", "")
         private lateinit var jugadores: Array<Jugadores>
         private var ganador = Ganador()
-
+        private var modalidad = ""
+        private var nivel = ""
         private var turnoMaquina = false
 
         fun getTurno(): Boolean {
@@ -78,6 +79,26 @@ interface Jugadores{
             turnoMaquina = booleano
         }
 
+        fun getModalidad(): String {
+            return modalidad
+        }
+
+        fun setModalidad(string: String){
+            modalidad = string
+        }
+
+        fun getNivel(): String {
+            return nivel
+        }
+
+        fun setNivel(string: String){
+            nivel = string
+        }
+
+        fun getGanador(): Ganador {
+            return ganador
+        }
+
         fun convertirBooleano(booleano: Boolean): Int{
             var bandera = 0
 
@@ -86,10 +107,6 @@ interface Jugadores{
             }
 
             return bandera
-        }
-
-        fun getGanador(): Ganador {
-            return ganador
         }
     }
 

@@ -18,16 +18,14 @@ class ModalidadActivity : AppCompatActivity() {
         botonModo2 = findViewById(R.id.botonModo2)
 
         botonModo1.setOnClickListener {
-            val actividad = Intent(this, DificultadActivity::class.java)
-            actividad.putExtra("modalidad", "1 JUGADOR")
-            startActivity(actividad)
+            Jugadores.setModalidad("1 JUGADOR")
+            startActivity(Intent(this, DificultadActivity::class.java))
             finish()
         }
 
         botonModo2.setOnClickListener {
-            val actividad = Intent(this, FichasActivity::class.java)
-            actividad.putExtra("modalidad", "2 JUGADORES")
-            startActivity(actividad)
+            Jugadores.setModalidad("2 JUGADORES")
+            startActivity(Intent(this, FichasActivity::class.java))
             finish()
         }
 

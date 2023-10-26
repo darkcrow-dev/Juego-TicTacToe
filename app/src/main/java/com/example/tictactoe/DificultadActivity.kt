@@ -13,8 +13,6 @@ class DificultadActivity : AppCompatActivity() {
     private lateinit var botonIntermedio: Button
     private lateinit var botonDificil: Button
 
-    private var modalidad: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dificultad)
@@ -22,8 +20,6 @@ class DificultadActivity : AppCompatActivity() {
         botonFacil = findViewById(R.id.botonFacil)
         botonIntermedio = findViewById(R.id.botonIntermedio)
         botonDificil = findViewById(R.id.botonDificil)
-
-        modalidad = intent.getStringExtra("modalidad")
 
         botonFacil.setOnClickListener {
             jugar("FACIL")
@@ -48,12 +44,9 @@ class DificultadActivity : AppCompatActivity() {
 
     private fun jugar(string: String){
         val fichas = seleccionarTurno()
-
-        val actividad = Intent(this, MainActivity::class.java)
-        actividad.putExtra("modalidad", modalidad)
-        actividad.putExtra("nivel", string)
-        actividad.putExtra("fichas", fichas)
-        startActivity(actividad)
+        Jugadores.setNivel(string)
+        Jugadores.setFichas(fichas)
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 

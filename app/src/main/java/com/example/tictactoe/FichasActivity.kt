@@ -10,8 +10,6 @@ class FichasActivity : AppCompatActivity() {
     private lateinit var botonFichaX: Button
     private lateinit var botonFichaO: Button
 
-    private var modalidad: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fichas)
@@ -19,13 +17,9 @@ class FichasActivity : AppCompatActivity() {
         botonFichaX = findViewById(R.id.botonFichaX)
         botonFichaO = findViewById(R.id.botonFichaO)
 
-        modalidad = intent.getStringExtra("modalidad")
-
         botonFichaX.setOnClickListener {
             val fichas = arrayOf("X", "O")
             jugar(fichas)
-
-
         }
 
         botonFichaO.setOnClickListener {
@@ -35,9 +29,7 @@ class FichasActivity : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                val actividad = Intent(this@FichasActivity, ModalidadActivity::class.java)
-                actividad.putExtra("modalidad", modalidad)
-                startActivity(actividad)
+                startActivity(Intent(this@FichasActivity, ModalidadActivity::class.java))
                 finish()
             }
 
@@ -45,10 +37,8 @@ class FichasActivity : AppCompatActivity() {
     }
 
     private fun jugar(arrayFichas: Array<String>){
-        val actividad = Intent(this, MainActivity::class.java)
-        actividad.putExtra("modalidad", modalidad)
-        actividad.putExtra("fichas", arrayFichas)
-        startActivity(actividad)
+        Jugadores.setFichas(arrayFichas)
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 }
