@@ -82,7 +82,7 @@ class Ganador: Jugadores{
         val bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
 
         botonAfirmativo.setOnClickListener {
-            jugadoresJuego[bandera].inicializarTablero(0)
+            jugadoresJuego[bandera].inicializarTablero()
             dialogo.dismiss()
         }
 

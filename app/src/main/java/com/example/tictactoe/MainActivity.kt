@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
 
         Jugadores.setJugadores(jugadores)
         var bandera = Jugadores.convertirBooleano(Jugadores.getTurno())
-        jugadores[bandera].inicializarTablero(0)
+        jugadores[bandera].inicializarTablero()
 
         imagenCasilla1.setOnClickListener {
             if(Jugadores.getJugar() && !Jugadores.getTurnoMaquina()){
@@ -155,15 +155,18 @@ class MainActivity : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                if(modalidad == "1 JUGADOR"){
-                    startActivity(Intent(this@MainActivity, DificultadActivity::class.java))
-                    finish()
-                }
-                else{
-                    startActivity(Intent(this@MainActivity, FichasActivity::class.java))
-                    finish()
-                }
+                cerrarActividad(modalidad)
             }
         })
+    }
+
+    private fun cerrarActividad(modalidad: String){
+        var actividad = Intent(this@MainActivity, DificultadActivity::class.java)
+        if(modalidad == "2 JUGADORES"){
+            actividad = Intent(this@MainActivity, FichasActivity::class.java)
+        }
+
+        startActivity(actividad)
+        finish()
     }
 }

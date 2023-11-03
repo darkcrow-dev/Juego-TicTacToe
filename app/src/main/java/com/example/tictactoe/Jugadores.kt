@@ -113,7 +113,7 @@ interface Jugadores{
     fun movimientoJugador(casilla: String){
     }
 
-    fun inicializarTablero(contador: Int){
+    fun inicializarTablero(){
     }
 
     fun terminarJuego(){

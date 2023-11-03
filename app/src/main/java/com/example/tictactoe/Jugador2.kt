@@ -52,32 +52,28 @@ class Jugador2(private var imagenesTablero: Array<Array<ImageView>>, private var
         turnoFicha.setImageResource(R.color.transparent)
     }
 
-    override fun inicializarTablero(contador: Int){
-        if(contador > 8){
-            Jugadores.setNumeroMovimientos(0)
-            Jugadores.setTurnoMaquina(false)
-            Jugadores.setJugar(true)
-            val fichas = Jugadores.getFichas()
+    override fun inicializarTablero(){
+        for(contador in 0 until 9){
+            val filas = (contador/3)
+            val columnas = contador - (3*filas)
+            val matrizTablero = Jugadores.getMatrizTablero()
 
-            if(fichas[0] == "X"){
-                Jugadores.setTurno(false)
-                turnoJuego(Jugadores.getTurno())
-            }
-            else{
-                Jugadores.setTurno(true)
-                turnoJuego(Jugadores.getTurno())
-            }
-
-            return
+            matrizTablero[filas][columnas] = " "
+            Jugadores.setMatrizTablero(matrizTablero)
+            imagenesTablero[filas][columnas].setImageResource(R.color.transparent)
         }
 
-        val filas = (contador/3)
-        val columnas = contador - (3*filas)
-        val matrizTablero = Jugadores.getMatrizTablero()
+        Jugadores.setNumeroMovimientos(0)
+        Jugadores.setTurnoMaquina(false)
+        Jugadores.setJugar(true)
+        val fichas = Jugadores.getFichas()
 
-        matrizTablero[filas][columnas] = " "
-        Jugadores.setMatrizTablero(matrizTablero)
-        imagenesTablero[filas][columnas].setImageResource(R.color.transparent)
-        inicializarTablero(contador + 1)
+        if(fichas[0] == "X"){
+            Jugadores.setTurno(false)
+            return turnoJuego(Jugadores.getTurno())
+        }
+
+        Jugadores.setTurno(true)
+        turnoJuego(Jugadores.getTurno())
     }
 }
