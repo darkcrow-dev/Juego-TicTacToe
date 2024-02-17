@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 
+/////////////////////////////////PROYECTO DE TIC TAC TOE////////////////////////////////
 class MainActivity : AppCompatActivity() {
     private lateinit var imagenesTablero: Array<Array<ImageView>>
     private lateinit var turnoPantalla: Array<TextView>
