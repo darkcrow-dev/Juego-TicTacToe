@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imagenVersus"
-        android:layout_width="145dp"
-        android:layout_height="145dp"
+        android:layout_width="148dp"
+        android:layout_height="148dp"
         android:src="@drawable/versus"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/imagenJugador1"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
         android:src="@drawable/jugador_vs_maquina"
         app:layout_constraintBottom_toTopOf="@+id/guideline19"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
@@ -29,8 +29,8 @@
 
     <ImageView
         android:id="@+id/imagenJugador2"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
         android:src="@drawable/jugador_vs_jugador"
         app:layout_constraintBottom_toTopOf="@+id/guideline19"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
@@ -39,10 +39,10 @@
 
     <Button
         android:id="@+id/botonModo1"
-        android:layout_width="140dp"
+        android:layout_width="142dp"
         android:layout_height="80dp"
         android:text="1&#10;JUGADOR"
-        android:textSize="16sp"
+        android:textSize="19sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
@@ -50,9 +50,11 @@
 
     <Button
         android:id="@+id/botonModo2"
-        android:layout_width="140dp"
+        android:layout_width="142dp"
         android:layout_height="80dp"
-        android:textSize="16sp"
+        android:paddingRight="0dp"
+        android:paddingLeft="0dp"
+        android:textSize="19sp"
         android:text="2&#10;JUGADORES"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"

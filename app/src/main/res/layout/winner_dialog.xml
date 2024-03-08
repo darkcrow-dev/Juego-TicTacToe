@@ -17,7 +17,7 @@
         <TextView
             android:id="@+id/tituloDialogo"
             android:textStyle="bold"
-            android:textSize="24sp"
+            android:textSize="24.2sp"
             android:text="GANADOR"
             android:textColor="@color/black"
             android:gravity="center"
@@ -28,14 +28,14 @@
         <LinearLayout
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="22dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/mensajeDialogo"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:text="El ganador es:"
                 android:gravity="center"
                 android:layout_marginRight="5dp"
@@ -46,8 +46,8 @@
             <TextView
                 android:id="@+id/mensajeGanador"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                android:text="JUGADOR"
+                android:textSize="22sp"
+                android:text="JUGADOR 1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
             </TextView>
@@ -57,7 +57,7 @@
             android:id="@+id/preguntaDialogo"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:text="¿Desea volver a jugar?"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -73,7 +73,7 @@
             <Button
                 android:id="@+id/botonAfirmativo"
                 android:text="SI"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:layout_marginRight="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -82,7 +82,7 @@
             <Button
                 android:id="@+id/botonNegativo"
                 android:text="NO"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
